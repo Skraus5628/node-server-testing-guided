@@ -22,6 +22,20 @@ server.use((err, req, res, next) => {
 	})
 })
 
+// the if statement allows the export of the server to go without running the entire server.
+if (!module.parent) {
 server.listen(port, () => {
 	console.log(`Running at http://localhost:${port}`)
 })
+}
+
+module.exports = server
+
+ // // the if statement allows the export of the server to go without running the entire server.
+// if (!module.parent) {
+// 	server.listen(port, () => {
+// 		console.log(`Running at http://localhost:${port}`)
+// 	})
+// 	}
+	
+// 	module.exports = server
